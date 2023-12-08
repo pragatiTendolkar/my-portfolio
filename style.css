@@ -68,7 +68,7 @@ li{
     border-radius: 50%;
     position: absolute;
     right: 30px;
-    transition: 1s all;
+    /* transition: 1s all; */
     z-index: 1111111;
 cursor: pointer;
 }
@@ -78,22 +78,32 @@ cursor: pointer;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 7px;
 }
 .line{
     border-bottom: 7px solid #000000;
-    transition: 1s all;
+    transition: 0.7s rotate;
     
+}
+.line2{
+    width: 100%;
+    transition: 0.7s width;
 }
 .hamburger.active .line3{
     rotate: 45deg;
+    margin-top: -12px;
 }
 .hamburger.active .line1{
     rotate: 135deg;
-    margin-bottom: -75px;
+}
+.hamburger.active  .ham-inner{
+    gap: 0;
 }
 .hamburger.active .line2{
     width: 0;
+    transition: 0s width;
+    
 }
 /* header css end */
 
