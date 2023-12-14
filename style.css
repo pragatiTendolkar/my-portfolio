@@ -156,3 +156,45 @@ cursor: pointer;
     line-height: 100px;
     font-weight: 600;
 }
+.divider-about {
+    border-bottom: 2px solid #fff;
+    width: 36%;
+    height: 20px;
+}
+
+
+
+
+
+
+.project-list img {
+    height: 250px;
+width: 250px;
+object-fit: cover;
+object-position: center;
+position: absolute;
+display: none;
+}
+
+.project-list h4 {
+    font-size: 50px;
+}
+
+.project-list {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    position: relative;
+}
+
+.flair {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
