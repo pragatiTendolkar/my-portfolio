@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header> <h1>PT.</h1>
         <!-- <div class="menu-main">
                 <h1>PT.</h1>
                 <ul class="menu-main-list">
@@ -25,9 +25,9 @@
             </div> -->
         <div class="hamburger" onclick="hamburger()">
             <div class="ham-inner">
-                <div class="line1 line"></div>
-                <div class="line2 line"></div>
-                <div class="line3 line"></div>
+                <div class="line1 lines"></div>
+                <div class="line2 lines"></div>
+                <div class="line3 lines"></div>
             </div>
         </div>
         <div class="ham-main">
@@ -41,24 +41,37 @@
     </header>
 
     <div id="main" class="scroll-container">
-        <div class="container" data-scroll-section data-scroll-speed="10">
-            <div id="page1" data-scroll-section>
-                <div class="heading" data-scroll-section>
-                    <h4>I'm Pragati Tendolkar</h4>
-                    <h1>A Web </h1>
-                    <h1> Developer</h1>
+        
+        <!-- <svg id="bg-circle" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="my-linear-gradient" gradientTransform="rotate(145 .5 .5)"><stop offset="0" stop-color="hsl(29, 79%, 60%)" /><stop offset="1" stop-color="hsl(29, 71%, 81%)" /></linearGradient><filter id="blur-filter" width="400%" height="400%" x="-100%" y="-100%"><feGaussianBlur stdDeviation="25" in="SourceGraphic"/></filter></defs><circle fill="#2D4F50" r="150" cx="400" cy="200" filter="url(#blur-filter)" /></svg> -->
+        <div class="container" >
+            <div id="page1"  data-scroll-section >
+                <div class="about-arrow">
+                    <span class="arrow-in-btn"><svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <polygon fill-rule="evenodd" points="11 18.586 11 3 13 3 13 18.586 19.293 12.293 20.707 13.707 12 22.414 3.293 13.707 4.707 12.293"/>
+                      </svg></span>
+                            <svg id="rotating-text" viewBox="0 0 500 500"><defs> </defs><path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="circle"></path><path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="arrow-path" marker-end="url(#arrow)"></path><text dy="70"><textPath xlink:href="#arrow-path"> About me About me &nbsp; About me </textPath></text></svg>
+                            
+                            </div>
+                <div class="heading" data-scroll >
+                    
+                  
+                    <h4> I'm Pragati Tendolkar</h4>
+                    
+                    <h1 class="my-text">Frontend </h1>
+                    <h1 class="my-text"> Developer</h1>
+
                 </div>
             </div>
         </div>
-        <div class="container" data-scroll-section>
-            <div id="page2" data-scroll-section>
-                <div class="about">
-                    <div class="container">
-                        <div class="row  about-me-row">
-                            <div class="col-5">
-                                <img src="about-img.png" alt="" class="img-fluid about-me-img">
+        
+            <div id="page2" >
+                <div class="about" >
+                    <div class="container" >
+                        <div class="row  about-me-row" >
+                            <div class="col-4" data-scroll-section data-scroll-speed="-3" >
+                                <img src="me.jpeg" alt="" class="img-fluid about-me-img">
                             </div>
-                            <div class="col-7">
+                            <div class="col-7"  data-scroll-section >
                                 <h4>About Me</h4>
 
                                 <p>Hey there, I'm Pragati Tendolkar, and I've been working as a web developer for a
@@ -76,35 +89,93 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <section class="page3" data-scroll-section>
-            <div class="container" data-scroll-section>
-                <div class="project-box">
-                    <div class="project-list" >
-                        <h4>Inicio Homes</h4>
-                        <img src="inicio.png" alt="" srcset="" class="img" >
+       
+            <div id="page3" data-scroll-section>
+
+                <div class="container" >
+    <div class="row edu-row ">
+                  <div class="col-md-6 education">
+                    <h2>Education</h2>
+                    <div class="edu">
+                        <h3>Rajendra Mane College of Engineering & Technology</h3>
+                        <h4>Electronics & Telecommmunication Engineering</h4>
+    
                     </div>
-                    <div class="project-list">
-                        <h4>Either Consulting</h4>
-                        <img src="about-img.png" alt="" srcset="" class="img">
+                    <div class="edu">
+                        <h3>Government Polytechnic Malwan</h3>
+                        <h4>Electronics & Telecommmunication Engineering</h4>
                     </div>
-                    <div class="project-list">
-                        <h4>Ashwadhi Dental Clinic</h4>
-                        <img src="inicio.png" alt="" srcset="" class="img">
+                    <div class="edu">
+                        <h3>Shri devi Mauli Madhyamik Vidyalay</h3>
+                        <h4>lorem</h4>
                     </div>
-                    <div class="project-list">
-                        <h4>Inicio Homes</h4>
-                        <img src="inicio.png" alt="" srcset="" class="img">
+                  </div>
+    
+                  <div class="col-md-1">
+    
                     </div>
+                  <div class="col-md-4 experience">
+                    <h2>Experience</h2>
+                    <div class="exp">
+                        <h3>Digichefs</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="exp">
+                        <h3>Digichefs</h3>
+                        <h4>Web Developer Intern</h4>
+                    </div>
+                    <div class="exp">
+                        <h3>Digichefs</h3>
+                        <h4>Web Developer Training</h4>
+                    </div>
+                  </div>
+    
+    
                 </div>
             </div>
-        </section>
-        <div class="flair flair--3"></div>
+            </div>
+
+
+        <div id="page4" data-scroll-section>
+
+            <div class="container projects" >
+                <h2>My Projects :</h2>
+
+                <div id="" class="projectelements">
+                    
+                    <img src="either.png" alt="">
+                    <h4>Either Consulting</h4>
+                    <a href="">+</a>
+                </div>
+
+                <div id="" class="projectelements">
+                    <img src="inicio.png" alt="">
+                    <h4>Inicio Homes</h4>
+                    <a href="">+</a>
+                </div>
+
+                <div id="" class="projectelements">
+                    <img src="ashwadhi.png" alt="">
+                    <h4>Ashwadhi Dental Clinic</h4>
+                    <a href="">+</a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.0/dist/locomotive-scroll.min.js"></script>
-     -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" integrity="sha512-LQQDtPAueBcmGXKdOBcMkrhrtqM7xR2bVrnMtYZ8ImAZhFlIb5xrMqQ6uZviyeSB+4mYj89ta8niiCIQM1Gj0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </section>
+    <!-- <div class="flair flair--3">help</div> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.0/dist/locomotive-scroll.min.js"></script>
+
+    <script src="script.js"></script>
     <script src="script.js"></script>
 </body>
 
