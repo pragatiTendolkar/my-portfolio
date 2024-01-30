@@ -70,16 +70,16 @@ document.querySelectorAll(".projectelements").forEach(function (elem) {
 
 
 
-let main = document.querySelector("#page1");
-let cursor = document.querySelector(".line11");
+// let main = document.querySelector("#page1");
+// let cursor = document.querySelector(".line11");
 
-main.addEventListener("mousemove", function(e){
-  console.log(e);
-    cursor.style.left = e.x/5 + "px";
-    cursor.style.top = e.y/5 + "px";
-    console.log(e.x/10);
-    console.log(e.y/10 );
-})
+// main.addEventListener("mousemove", function(e){
+//   console.log(e);
+//     cursor.style.left = e.x/5 + "px";
+//     cursor.style.top = e.y/5 + "px";
+//     console.log(e.x/10);
+//     console.log(e.y/10 );
+// })
 
 
 
@@ -156,10 +156,10 @@ gsap.to(".line-2", {
     end: "+=70%",
     markers:true
   },
-  x: '-260%', 
-  scale:0.5,
+  x: '-300%', 
+  scale:0,
   boxShadow: '0 0 7px 146px #2D4F50',
-  y: '-90%', 
+  y: '-290%', 
 
   ease: "ease-in"
 });
@@ -175,6 +175,25 @@ gsap.to("body", {
   backgroundColor: 'white',
   ease: "ease-in"
 });
+
+// gsap.to("body", {
+//   backgroundColor: 'black',
+//   scrollTrigger: {
+//     trigger: "#page3",
+//     scroller: "#main",
+//     scrub: true,
+//     start: "-70%",
+//     end: "+=50%",
+//     markers: true,
+//   },
+//   ease: "ease-out",
+// });
+
+
+
+
+
+
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 

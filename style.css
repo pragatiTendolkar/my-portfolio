@@ -6,8 +6,8 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
     font-family: 'DM Sans', sans-serif;
+    color: #000000;
 }
 a{
     text-decoration: none !important;
@@ -15,7 +15,7 @@ a{
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 
-    font-weight: 300;
+    font-weight: 600;
 
 }
 
@@ -31,6 +31,16 @@ body{
 }
 header{
     padding:25px 90px;
+    color: #fff;
+
+    
+}
+
+.my-text .char{
+ 
+color: #fff;
+    
+    
 }
 li{
    list-style: none;
@@ -138,12 +148,16 @@ cursor: pointer;
     /* border: 5px solid #5fb3b4; */
 }
 
+.heading{
+color: #ffffff;
+}
 #page1 .heading h1 {
     font-size: 150px;
     font-weight: 900;
     line-height: 140px;
     text-transform: uppercase;
     text-align: center;
+    
 }
 
 
@@ -194,19 +208,20 @@ svg textPath {
     right: 30%;
     top: 50%;
     z-index: -1;
-    filter: saturate(0.7);
+    /* filter: saturate(0.7); */
     height: 480px;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 .about-me-row p {
     font-size: 23px;
-    color: #000;
+    
 }
 
 .about-me-row h4 {
     font-size: 60px;
-    color: #000;
+   
 }
 .about-me-row{
     display: flex;
