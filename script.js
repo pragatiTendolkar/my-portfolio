@@ -71,7 +71,7 @@ document.querySelectorAll(".projectelements").forEach(function (elem) {
 
 
 let main = document.querySelector("#page1");
-let cursor = document.querySelector("#bg-circle");
+let cursor = document.querySelector(".line11");
 
 main.addEventListener("mousemove", function(e){
   console.log(e);
@@ -92,3 +92,90 @@ gsap.to('.char', {
     delay: 0.2,
     duration: .1
 })
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".smooth-scroll"),
+  smooth: true,
+
+  // for tablet smooth
+  tablet: { smooth: true },
+
+  // for mobile
+  smartphone: { smooth: true }
+});
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".smooth-scroll", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
+
+  // follwoing line is not required to work pinning on touch screen
+
+  /* pinType: document.querySelector(".smooth-scroll").style.transform
+    ? "transform"
+    : "fixed"*/
+});
+
+// --- RED PANEL ---
+gsap.from(".line-1", {
+  scrollTrigger: {
+    trigger: ".line-1",
+    scroller: ".smooth-scroll",
+    scrub: true,
+    start: "-300%",
+    end: "+=100%",
+  },
+  scaleX: 0,
+  transformOrigin: "left center",
+  ease: "none"
+});
+
+// --- ORANGE PANEL ---
+gsap.to(".line-2", {
+  scrollTrigger: {
+    trigger: ".line-2", 
+    scroller: ".smooth-scroll",
+    scrub: true,
+    pin: true,
+    start: "-70%",
+  
+    end: "+=70%",
+    markers:true
+  },
+  x: '-260%', 
+  scale:0.5,
+  boxShadow: '0 0 7px 146px #2D4F50',
+  y: '-90%', 
+
+  ease: "ease-in"
+});
+
+gsap.to("body", {
+  scrollTrigger: {
+    trigger: "#page2",
+    scroller: "#main",
+    scrub: true,
+    start: "-70%",
+    end: "+=50%",
+  },
+  backgroundColor: 'white',
+  ease: "ease-in"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
