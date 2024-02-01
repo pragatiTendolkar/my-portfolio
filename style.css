@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
-    color: #000000;
+    color: #ffffff;
 }
 a{
     text-decoration: none !important;
@@ -20,8 +20,17 @@ a{
 }
 
 
-
-
+#matter-container {
+  width: 1350px;
+  height: 600px;
+  border-radius: 150px;
+  margin: auto;
+  position: relative;
+}
+#matter-container canvas {
+  border-radius: 20px;
+  border: 1px solid #373737;
+}
 
 body{
     width: 100%;
@@ -31,6 +40,7 @@ body{
 }
 header{
     padding:25px 90px;
+ 
     color: #fff;
 
     
@@ -139,8 +149,12 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     margin-top:100px;
-    height: 90vh;
+    height: fit-content;
     /* border: 5px solid #5fb3b4; */
+}
+#page4{
+    padding-bottom: 150px;
+
 }
 
 #page2{
@@ -253,12 +267,14 @@ text-decoration: underline;
 text-decoration-style: wavy;
 text-decoration-thickness: 1px;
 text-underline-position: under;
+padding-bottom: 90px;
 }
 
 
 
 .projects h4 {
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 
@@ -393,7 +409,7 @@ html.has-scroll-smooth {
     color: #b2b2b2;
 }
 
-.edu-row h2 {
+.edu-row h2, .skills-head {
     font-size: 50px;
    
 }

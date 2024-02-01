@@ -164,17 +164,20 @@ gsap.to(".line-2", {
   ease: "ease-in"
 });
 
-gsap.to("body", {
-  scrollTrigger: {
-    trigger: "#page2",
-    scroller: "#main",
-    scrub: true,
-    start: "-70%",
-    end: "+=50%",
-  },
-  backgroundColor: 'white',
-  ease: "ease-in"
-});
+// gsap.to("body", {
+//   scrollTrigger: {
+//     trigger: "#page2",
+//     scroller: "#main",
+//     scrub: true,
+//     start: "-70%",
+//     end: "+=50%",
+//   },
+//   backgroundColor: 'white',
+//   ease: "ease-in"
+// });
+
+
+
 
 // gsap.to("body", {
 //   backgroundColor: 'black',
@@ -188,6 +191,167 @@ gsap.to("body", {
 //   },
 //   ease: "ease-out",
 // });
+
+
+
+
+function initPhysicsSimulation() {
+       
+  var Engine = Matter.Engine,
+          Render = Matter.Render,
+          Events = Matter.Events,
+          MouseConstraint = Matter.MouseConstraint,
+          Mouse = Matter.Mouse,
+          World = Matter.World,
+          Bodies = Matter.Bodies;
+  
+      var engine = Engine.create(),
+          world = engine.world;
+  
+      var render = Render.create({
+          element: document.getElementById('matter-container'),
+          engine: engine,
+          options: {
+              width: 1200,
+              height: 400,
+              pixelRatio: 2,
+              background: '#080808',
+              wireframes: false,
+          }
+      });
+  
+     var ground = Bodies.rectangle(
+    (900 / 2) + 160, 300 + 180, 1200, 160, {
+        isStatic: true,
+        chamfer: { radius: 10 },
+        render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+    }
+);
+
+var wallLeft = Bodies.rectangle(-80, 300 / 2, 160, 300, {
+    isStatic: true,
+    chamfer: { radius: 10 },
+    render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+});
+
+var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
+    isStatic: true,
+    chamfer: { radius: 10 },
+    render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+});
+
+      var roof = Bodies.rectangle(
+          (900 / 2) + 160, -80, 900 + 320, 160, { isStatic: true, render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' } });
+  
+      var radius = 20;
+  
+      var html = Bodies.rectangle(400, 150, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'html.png', xScale: 0.9, yScale: 0.9 } }
+      });
+  
+      var css = Bodies.rectangle(590, 170, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'css.png', xScale: 0.9, yScale: 0.9 } }
+      });
+  
+  
+  
+      var js   = Bodies.rectangle(700,100, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'JS.png', xScale: 0.9, yScale: 0.9 } }
+      });
+  
+      var react = Bodies.rectangle(470, 90, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'react.png', xScale: 0.9, yScale: 0.9} }
+      });
+  
+      var tail = Bodies.rectangle(630, 10, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'tailwind.png', xScale: 0.9, yScale: 0.9 } }
+      });
+  
+      
+      var boot = Bodies.rectangle(500, 90, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'boot.png', xScale: 0.9, yScale: 0.9 } }
+      });
+  
+      var creative = Bodies.rectangle(580, 90, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'creative.png', xScale: 0.9, yScale: 0.9} }
+      });
+  
+      var wordpress = Bodies.rectangle(770, 90, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'wordpress.png', xScale: 0.8, yScale: 0.8 } }
+      });
+  
+      var shopify = Bodies.rectangle(490, 0, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'shopify.png', xScale: 0.9, yScale: 0.8 } }
+      });
+  
+      World.add(engine.world, [ground, wallLeft, wallRight, roof, html, css,js,react,tail,boot, creative,wordpress,shopify]);
+  
+      var mouse = Mouse.create(render.canvas),
+          mouseConstraint = MouseConstraint.create(engine, {
+              mouse: mouse,
+              constraint: {
+                  stiffness: 0.2,
+                  render: {
+                      visible: false
+                  }
+              }
+          });
+  
+      World.add(world, mouseConstraint);
+  
+      render.mouse = mouse;
+  
+      mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+      mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+  
+      let click = false;
+  
+      document.addEventListener('mousedown', () => click = true);
+      document.addEventListener('mousemove', () => click = false);
+      document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
+  
+      Engine.run(engine);
+      Render.run(render);
+  }
+
+
+// ScrollTrigger.create({
+//     trigger: "#matter-container",
+//     start: " 100%",
+//     scroller: "#main",
+//     markers: true,
+//     onEnter: function () {
+//       initPhysicsSimulation();
+//   },
+// });
+
+
+
+
+gsap.to("#matter-container", {
+  scrollTrigger: {
+    trigger: "#matter-container",
+    scroller: "#main",
+    start: "-150%",
+    end: "+=50%",
+  
+  },
+
+  onComplete: function () {
+
+    initPhysicsSimulation(); // Call your physics simulation initialization here
+},
+  
+});
 
 
 
