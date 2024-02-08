@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const scroll = new LocomotiveScroll({
       el: document.querySelector(".scroll-container"),
@@ -22,43 +17,56 @@ function hamburger(){
 } 
 
 
-
-
 document.querySelectorAll(".projectelements").forEach(function (elem) {
   var rotate = 0;
   var diffrot = 0;
 
+
+
   elem.addEventListener("mouseleave", function (dets) {
-      gsap.to(elem.querySelector("img"), {
+      gsap.to(elem.querySelector(".img"), {
           opacity: 0,
           ease: Power3,
           duration: 0.5,
       });
   });
 
+
   elem.addEventListener("mousemove", function (dets) {
       var diff = dets.clientY - elem.getBoundingClientRect().top;
       diffrot = dets.clientX - rotate;
       rotate = dets.clientX;
-      gsap.to(elem.querySelector("img"), {
+      gsap.to(elem.querySelector(".img"), {
           opacity: 1,
           ease: Power3,
           top: diff,
           left: dets.clientX,
           rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
-      });
+      });     
   });
 });
 
 
+let cursor = document.querySelector(".view-project");
+
+
+main.addEventListener("mousemove", function(dets){
+    // cursor.style.left = (dets.x) + "px";
+    // cursor.style.top = (dets.y) + "px";
+    console.log(movementX);
+    console.log(movementY);
+    
+
+})
 
 
 
 
-// gsap.set(".flair", {xPercent: -50, yPercent: -50});
 
-// let xSetter = gsap.quickSetter(".flair", "x", "px") //apply it to the #id element's x property and append a "px" unit
-// let ySetter = gsap.quickSetter(".flair", "y", "px") //apply it to the #id element's x property and append a "px" unit
+// gsap.set(".view-project", {xPercent: -100, yPercent: -100});
+
+// let xSetter = gsap.quickSetter(".view-project", "x", "px") //apply it to the #id element's x property and append a "px" unit
+// let ySetter = gsap.quickSetter(".view-project", "y", "px") //apply it to the #id element's x property and append a "px" unit
 
 // window.addEventListener("mousemove", e => {  
 //   xSetter(e.x)
@@ -136,7 +144,7 @@ gsap.from(".line-1", {
     trigger: ".line-1",
     scroller: ".smooth-scroll",
     scrub: true,
-    start: "-300%",
+    start: "-370%",
     end: "+=100%",
   },
   scaleX: 0,
@@ -151,8 +159,7 @@ gsap.to(".line-2", {
     scroller: ".smooth-scroll",
     scrub: true,
     pin: true,
-    start: "-70%",
-  
+    start: "-36%",
     end: "+=70%",
     markers:true
   },
@@ -247,7 +254,7 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
   
       var html = Bodies.rectangle(400, 150, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'html.png', xScale: 0.9, yScale: 0.9 } }
+          render: { sprite: { texture: 'html.png', xScale:1, yScale: 1 } }
       });
   
       var css = Bodies.rectangle(590, 170, 175, 45,{
@@ -355,6 +362,24 @@ gsap.to("#matter-container", {
 
 
 
+gsap.from(".contact-div", {
+    scrollTrigger: {
+      trigger: ".contact-container",
+      scroller: "#main",
+      start: "-30%",
+      end: "+=50%",
+      opacity:1,
+      markers:true,
+    
+    },
+  
+   scale:2,
+   opacity:0,
+   ease: "ease-in",
+   duration:1,
+    
+  });
+  
 
 
 
