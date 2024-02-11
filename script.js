@@ -47,47 +47,46 @@ document.querySelectorAll(".projectelements").forEach(function (elem) {
 });
 
 
-let cursor = document.querySelector(".view-project");
-
-
-main.addEventListener("mousemove", function(dets){
-    // cursor.style.left = (dets.x) + "px";
-    // cursor.style.top = (dets.y) + "px";
-    console.log(movementX);
-    console.log(movementY);
-    
-
-})
 
 
 
 
 
-// gsap.set(".view-project", {xPercent: -100, yPercent: -100});
+var magnets = document.querySelectorAll('.magnetic')
+var strength = 50
 
-// let xSetter = gsap.quickSetter(".view-project", "x", "px") //apply it to the #id element's x property and append a "px" unit
-// let ySetter = gsap.quickSetter(".view-project", "y", "px") //apply it to the #id element's x property and append a "px" unit
+magnets.forEach( (magnet) => {
+  magnet.addEventListener('mousemove', moveMagnet );
+  magnet.addEventListener('mouseout', function(event) {
+    TweenMax.to( event.currentTarget, 1, {x: 0, y: 0, ease: Power4.easeOut})
+  } );
+});
 
-// window.addEventListener("mousemove", e => {  
-//   xSetter(e.x)
-//   ySetter(e.y)
-// });
+function moveMagnet(event) {
+  var magnetButton = event.currentTarget
+  var bounding = magnetButton.getBoundingClientRect()
+
+  //console.log(magnetButton, bounding)
+
+  TweenMax.to( magnetButton, 1, {
+    x: ((( event.clientX - bounding.left)/magnetButton.offsetWidth) - 0.5) * strength,
+    y: ((( event.clientY - bounding.top)/magnetButton.offsetHeight) - 0.5) * strength,
+    ease: Power4.easeOut
+  })
+
+  //magnetButton.style.transform = 'translate(' + (((( event.clientX - bounding.left)/(magnetButton.offsetWidth))) - 0.5) * strength + 'px,'+ (((( event.clientY - bounding.top)/(magnetButton.offsetHeight))) - 0.5) * strength + 'px)';
+}
 
 
 
 
 
 
-// let main = document.querySelector("#page1");
-// let cursor = document.querySelector(".line11");
 
-// main.addEventListener("mousemove", function(e){
-//   console.log(e);
-//     cursor.style.left = e.x/5 + "px";
-//     cursor.style.top = e.y/5 + "px";
-//     console.log(e.x/10);
-//     console.log(e.y/10 );
-// })
+
+
+
+
 
 
 
@@ -254,53 +253,58 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
   
       var html = Bodies.rectangle(400, 150, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'html.png', xScale:1, yScale: 1 } }
+          render: { sprite: { texture: 'skills/html.png', xScale:1, yScale: 1 } }
       });
   
       var css = Bodies.rectangle(590, 170, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'css.png', xScale: 0.9, yScale: 0.9 } }
+          render: { sprite: { texture: 'skills/css.png', xScale: 0.9, yScale: 0.9 } }
       });
   
   
   
       var js   = Bodies.rectangle(700,100, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'JS.png', xScale: 0.9, yScale: 0.9 } }
+          render: { sprite: { texture: 'skills/JS.png', xScale: 0.9, yScale: 0.9 } }
       });
   
       var react = Bodies.rectangle(470, 90, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'react.png', xScale: 0.9, yScale: 0.9} }
+          render: { sprite: { texture: 'skills/react.png', xScale: 0.9, yScale: 0.9} }
       });
   
       var tail = Bodies.rectangle(630, 10, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'tailwind.png', xScale: 0.9, yScale: 0.9 } }
+          render: { sprite: { texture: 'skills/tailwind.png', xScale: 0.9, yScale: 0.9 } }
       });
   
       
       var boot = Bodies.rectangle(500, 90, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'boot.png', xScale: 0.9, yScale: 0.9 } }
+          render: { sprite: { texture: 'skills/boot.png', xScale: 0.9, yScale: 0.9 } }
       });
   
       var creative = Bodies.rectangle(580, 90, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'creative.png', xScale: 0.9, yScale: 0.9} }
+          render: { sprite: { texture: 'skills/creative.png', xScale: 0.9, yScale: 0.9} }
       });
   
       var wordpress = Bodies.rectangle(770, 90, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'wordpress.png', xScale: 0.8, yScale: 0.8 } }
+          render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.8, yScale: 0.8 } }
       });
   
       var shopify = Bodies.rectangle(490, 0, 175, 45,{
           chamfer: { radius: radius },
-          render: { sprite: { texture: 'shopify.png', xScale: 0.9, yScale: 0.8 } }
+          render: { sprite: { texture: 'skills/shopify.png', xScale: 0.9, yScale: 0.8 } }
       });
+
+      var photoshop = Bodies.rectangle(490, 0, 175, 45,{
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/photoshop.webp', xScale: 0.9, yScale: 0.8 } }
+    });
   
-      World.add(engine.world, [ground, wallLeft, wallRight, roof, html, css,js,react,tail,boot, creative,wordpress,shopify]);
+      World.add(engine.world, [ground, wallLeft, wallRight, roof, html, css,js,react,tail,boot, creative,wordpress,shopify, photoshop]);
   
       var mouse = Mouse.create(render.canvas),
           mouseConstraint = MouseConstraint.create(engine, {
@@ -369,7 +373,7 @@ gsap.from(".contact-div", {
       start: "-30%",
       end: "+=50%",
       opacity:1,
-      markers:true,
+      markers:false,
     
     },
   
