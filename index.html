@@ -31,6 +31,15 @@
                     <li>Contact</li>
                 </ul>
             </div> -->
+
+
+            
+  
+    </header>
+
+    <div id="main" class="smooth-scroll" data-scroll-container>
+
+
         <div class="hamburger" onclick="hamburger()">
             <div class="ham-inner">
                 <div class="line1 lines"></div>
@@ -41,40 +50,42 @@
         <div class="ham-main">
             <ul class="ham-main-list">
 
-                <li>About</li>
-                <li>Experience</li>
-                <li>Work</li>
-                <li>Contact</li>
+               <li href="#page2" data-scroll-to>About</li>
+                <a href="#page33" data-scroll-to><li>Work</li></a> 
+                <a href="#page5" data-scroll-to><li>Skills</li></a> 
+                
+                <a href="#page4" data-scroll-to> <li>Contact</li></a>
 
             </ul>
 
             <div class="social-icon-header">
                 <div class="social">
-                    <img src="images/linkedin.png" alt="">
+                   <a href="https://www.linkedin.com/in/pragati-tendolkar/" target="_blank" ><img src="images/linkedin.png" alt=""></a> 
                 </div>
                 <div class="social">
-                    <img src="images/codepen.png" alt="">
+                    <a href="https://codepen.io/Pragatitendolkar" target="_blank" ><img src="images/codepen.png" alt=""></a>
                 </div>
                 <div class="social">
-                    <img src="images/github.png" alt="">
+                    <a href="https://github.com/pragatiTendolkar" target="_blank" ><img src="images/github.png" alt=""></a> 
                 </div>
                 <div class="social">
-                    <img src="images/facebook.png" alt="">
+                    <a href="http://" target="_blank" > <img src="images/facebook.png" alt=""></a>
                 </div>
             </div>
 
         </div>
-    </header>
 
-    <div id="main" class="smooth-scroll" data-scroll-container>
+        
         <div class="" data-scroll-section="">
             <section class="panel purple" data-scroll data-scroll-speed="-3">
                 <span class="line11 line-2"></span>
+               
 
 
 
                 <div class="container">
                     <div id="page1">
+                        
                         <div class="about-arrow">
                             <span class="arrow-in-btn"><svg fill="#fff" width="25px" height="25px" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +100,7 @@
                                 <path
                                     d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
                                     id="arrow-path" marker-end="url(#arrow)"></path><text dy="70">
-                                    <textPath xlink:href="#arrow-path"> About me About me &nbsp; About me </textPath>
+                                    <textPath xlink:href="#arrow-path"> scroll down scroll down scroll down </textPath>
                                 </text>
                             </svg>
 
@@ -106,6 +117,7 @@
         <!-- <svg id="bg-circle" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="my-linear-gradient" gradientTransform="rotate(145 .5 .5)"><stop offset="0" stop-color="hsl(29, 79%, 60%)" /><stop offset="1" stop-color="hsl(29, 71%, 81%)" /></linearGradient><filter id="blur-filter" width="400%" height="400%" x="-100%" y="-100%"><feGaussianBlur stdDeviation="25" in="SourceGraphic"/></filter></defs><circle fill="#2D4F50" r="150" cx="400" cy="200" filter="url(#blur-filter)" /></svg>
       
          -->
+        
         <div id="page2" data-scroll-section>
 
             <div class="container about">
@@ -126,9 +138,9 @@
 
                         <div class="divider-about"></div>
                         <!-- <div class="magnetic">
-                            <button type="button" class="btn btn-outline-primary magnet-button" name="button">Click Me
+                            <button   type="button"   id="btn" class="magnet-button" name="button">Contact Me
                             </button>
-                          </div> -->
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -136,7 +148,7 @@
         </div>
 
 
-        <div id="page4" data-scroll-section>
+        <div id="page33" data-scroll-section>
 
             <div class="container projects">
                 <h2 class="underline link">My Projects :</h2>
@@ -149,7 +161,7 @@
                     </div>
                     <h4>Either Consulting</h4>
                 </div>
-                <a href="" class="view-project magnetic">View</a>
+                <a href="https://eithrconsulting.com/" target="_blank"  class="view-project magnetic">View</a>
             </div>
 
 
@@ -161,7 +173,7 @@
                         </div>
                         <h4>Inicio Homes</h4>
                     </div>
-                    <a href="" class="view-project magnetic">View</a>
+                    <a href="https://inicio.homes/" target="_blank"  class="view-project magnetic">View</a>
                 </div>
 
                 <div class="project-box d-flex">
@@ -172,13 +184,13 @@
                         </div>
                         <h4>Ashwadhi Dental Clinic</h4>
                     </div>
-                    <a href="" class="view-project magnetic">View</a>
+                    <a href="https://ashwadhidentalclinic.com/" target="_blank"  class="view-project magnetic">View</a>
                 </div>
 
 
             
 
-                <div class="project-box d-flex">
+                <div class="project-box d-flex" class="section" id="section2">
                     <div id="" class="projectelements">
                         <div class="img">
                             <img src="images/dento.webp" alt="">
@@ -186,7 +198,7 @@
                         </div>
                         <h4>Dr Dento</h4>
                     </div>
-                    <a href="" class="view-project magnetic">View</a>
+                    <a href="https://drdento.com/" target="_blank"  class="view-project magnetic">View</a>
                 </div>
 
 
@@ -198,7 +210,7 @@
                         </div>
                         <h4>USCPL</h4>
                     </div>
-                    <a href="" class="view-project magnetic">View</a>
+                    <a href="https://uscpl.net/"target="_blank"  class="view-project magnetic">View</a>
                 </div>
 
 
@@ -210,7 +222,7 @@
                         </div>
                         <h4>Ask Anya</h4>
                     </div>
-                    <a href="" class="view-project magnetic">View</a>
+                    <a href="https://www.askanya.in/"  target="_blank" class="view-project magnetic">View</a>
                 </div>
 
 
@@ -222,7 +234,7 @@
                         </div>
                         <h4>Dietician Richa</h4>
                     </div>
-                    <a href="" class="view-project magnetic">View</a>
+                    <a href="https://dieticianricha.com/get-fit/" target="_blank" class="view-project magnetic">View</a>
                 </div>
             </div>
         </div>
@@ -296,8 +308,8 @@
                     <div class="btn-div" data-scroll data-scroll-speed="4" data-scroll-direction="vertical"
                         data-scroll-position="bottom" data-scroll-offset="-50%, 0">
                         <div class="magnetic">
-                            <button type="button" class="magnet-button" name="button">Click Me
-                            </button>
+                            <a href="mailto:tendolkarpragati123@gmail.com" type="button" class="magnet-button" name="button">Click Me
+                            </a>
                         </div>
                     </div>
 

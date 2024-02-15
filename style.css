@@ -104,10 +104,10 @@ li {
 .ham-main {
   background-color: #fff;
   width: 35%;
-  height: 100vh;
+  height: 112vh;
   position: absolute;
   right: 0;
-  top: 0;
+  top: -230px;
   z-index: 111111;
   padding: 30px;
   display: flex;
@@ -136,7 +136,7 @@ li {
   position: absolute;
   z-index: 1111111;
   right: 30px;
-  top: 20px;
+  top: -180px;
   /* transition: 1s all; */
   z-index: 1111111;
   cursor: pointer;
@@ -764,12 +764,13 @@ html.has-scroll-dragging {
   border-radius: 50%;
   color: #fff;
   border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-#page5,
-#page6 {
-  display: none !important;
-}
+
 
 
 
@@ -886,7 +887,7 @@ html.has-scroll-dragging {
   width: 85%;
   height: 310px;
   gap: 20px;
-  opacity: 1;
+  opacity: 1 !important;
   
 }
 

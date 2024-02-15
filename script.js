@@ -47,7 +47,11 @@ document.querySelectorAll(".projectelements").forEach(function (elem) {
 });
 
 
+const slider= document.querySelector('#page2');
 
+$('#work').on('click', function() {
+    locoScroll.scrollTo(slider)
+});
 
 
 
