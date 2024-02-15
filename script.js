@@ -164,7 +164,7 @@ gsap.to(".line-2", {
     pin: true,
     start: "-36%",
     end: "+=70%",
-    markers:true
+    markers:false
   },
   x: '-300%', 
   scale:0,
