@@ -267,12 +267,12 @@ svg textPath {
 
 
 .about-me-img {
-  width: 400px;
+  width: 300px;
   right: 30%;
   top: 50%;
   z-index: -1;
   /* filter: saturate(0.7); */
-  height: 480px;
+  height: 400px;
   object-fit: cover;
   border-radius: 20px;
 }
