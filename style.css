@@ -195,6 +195,12 @@ li {
   /* border: 5px solid #5fb3b4; */
 }
 
+#page1 {
+
+  margin-top: -240px;
+
+}
+
 #page4 {
   padding-bottom: 150px;
 
@@ -640,6 +646,9 @@ html.has-scroll-dragging {
 
 .panel {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .line11 {
