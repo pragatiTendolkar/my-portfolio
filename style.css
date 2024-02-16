@@ -41,6 +41,31 @@ body {
   border-radius: 150px;
   margin: auto;
   position: relative;
+
+}
+
+
+.loader{
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  z-index: 11111111111111;
+  top: 0;
+  transition: 2s top;
+
+}
+.loader-item{
+  width: 500px;
+  filter: grayscale(10);
+}
+
+.loaded .loader{
+  top:-100%;
+  border-radius: 0 0 50% 50%;
 }
 
 #matter-container canvas {

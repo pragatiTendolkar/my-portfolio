@@ -82,7 +82,13 @@ function moveMagnet(event) {
 }
 
 
-
+document.addEventListener("DOMContentLoaded", function () {
+  // Simulate a delay of 2 seconds before hiding the loader
+  setTimeout(function() {
+      // When timeout is complete, remove the loader
+      document.body.classList.add('loaded');
+  }, 2000); // 2000 milliseconds = 2 seconds
+});
 
 
 
