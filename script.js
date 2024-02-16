@@ -166,9 +166,8 @@ gsap.to(".line-2", {
     end: "+=70%",
     markers:false
   },
-  x: '-300%', 
+  x: '-350%', 
   scale:0,
-  boxShadow: '0 0 7px 146px #2D4F50',
   y: '-290%', 
 
   ease: "ease-in"

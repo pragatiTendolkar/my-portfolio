@@ -104,10 +104,10 @@ li {
 .ham-main {
   background-color: #fff;
   width: 35%;
-  height: 122vh;
+  height: 110vh;
   position: absolute;
   right: 0;
-  top: -230px;
+  top: -10px;
   z-index: 111111;
   padding: 30px;
   display: flex;
@@ -136,7 +136,7 @@ li {
   position: absolute;
   z-index: 1111111;
   right: 37px;
-  top: -80px;
+  top: 30px;
   /* transition: 1s all; */
   z-index: 1111111;
   cursor: pointer;
@@ -655,8 +655,8 @@ html.has-scroll-dragging {
   width: 100%;
   position: absolute;
   max-width: 300px;
-  left: 50%;
-  top: 50%;
+  left: 55%;
+  top: 60%;
   border-radius: 50%;
   box-shadow: 0 0 71px 146px #2D4F50;
   height: 300px;
