@@ -820,7 +820,7 @@ html.has-scroll-dragging {
 @media only screen and (max-width: 600px) {
 
   .matter-container{
-    display: none;
+    display: none !important;
   }
 
   .mobile-matter-container{
@@ -987,6 +987,8 @@ font-size: 20px;
   font-size: 16px;
 
 }
-
+.mobile-matter-container{
+  scale: 0.9;
+}
 
 }

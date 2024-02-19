@@ -361,7 +361,7 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
         element: document.getElementById('mobile-matter-container'),
         engine: engine,
         options: {
-            width: 400,
+            width: 300,
             height: 400,
             pixelRatio: 2,
             background: '#080808',
