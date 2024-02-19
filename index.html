@@ -53,17 +53,17 @@
         <div class="ham-main">
             <ul class="ham-main-list">
 
-               <li href="#page2" data-scroll-to class="magnetic">About</li>
-                <a href="#page33" data-scroll-to><li  class="magnetic" >Work</li></a> 
-                <a href="#page5" data-scroll-to><li class="magnetic" >Skills</li></a> 
+               <li href="#page2" data-scroll-to class="magnetic" onclick="hamburger()">About</li>
+                <a href="#page33" data-scroll-to><li  class="magnetic" onclick="hamburger()" >Work</li></a> 
+                <a href="#page5" data-scroll-to><li class="magnetic" onclick="hamburger()" >Skills</li></a> 
                 
-                <a href="#page4" data-scroll-to> <li class="magnetic">Contact</li></a>
+                <a href="#page4" data-scroll-to> <li class="magnetic" onclick="hamburger()">Contact</li></a>
 
             </ul>
 
             <div class="social-icon-header">
                 <div class="social">
-                   <a href="https://www.linkedin.com/in/pragati-tendolkar/" target="_blank" ><img src="images/linkedin.png" alt=""></a> 
+                   <a href="https://www.linkedin.com/in/pragati-tendolkar/" target="_blank"  ><img src="images/linkedin.png" alt=""></a> 
                 </div>
                 <div class="social">
                     <a href="https://codepen.io/Pragatitendolkar" target="_blank" ><img src="images/codepen.png" alt=""></a>
@@ -162,7 +162,7 @@
                         <img src="images/either.png" alt="">
                         
                     </div>
-                    <h4>Either Consulting</h4>
+                    <h4 class="project-name">Either Consulting</h4>
                 </div>
                 <a href="https://eithrconsulting.com/" target="_blank"  class="view-project magnetic"  >View</a>
             </div>
@@ -174,7 +174,7 @@
                             <img src="images/inicio.png" alt="">
                             
                         </div>
-                        <h4>Inicio Homes</h4>
+                        <h4 class="project-name">Inicio Homes</h4>
                     </div>
                     <a href="https://inicio.homes/" target="_blank"  class="view-project magnetic">View</a>
                 </div>
@@ -185,7 +185,7 @@
                             <img src="images/ashwadhii.webp" alt="">
                             
                         </div>
-                        <h4>Ashwadhi Dental Clinic</h4>
+                        <h4 class="project-name"> Ashwadhi Dental Clinic</h4>
                     </div>
                     <a href="https://ashwadhidentalclinic.com/" target="_blank"  class="view-project magnetic">View</a>
                 </div>
@@ -199,11 +199,21 @@
                             <img src="images/dento.webp" alt="">
                             
                         </div>
-                        <h4>Dr Dento</h4>
+                        <h4 class="project-name">Dr Dento</h4>
                     </div>
                     <a href="https://drdento.com/" target="_blank"  class="view-project magnetic">View</a>
                 </div>
 
+
+                <div class="project-box d-flex">
+                    <div id="" class="projectelements">
+                        <div class="img">
+                            <img src="images/cfx.webp" alt="">
+                        </div>
+                        <h4 class="project-name">CFX Inks</h4>
+                    </div>
+                    <a href="https://cfxinks.com/"  target="_blank" class="view-project magnetic">View</a>
+                </div>
 
 
                 <div class="project-box d-flex">
@@ -211,22 +221,14 @@
                         <div class="img">
                             <img src="images/ashwadhii.webp" alt="">
                         </div>
-                        <h4>USCPL</h4>
+                        <h4 class="project-name">USCPL</h4>
                     </div>
                     <a href="https://uscpl.net/"target="_blank"  class="view-project magnetic">View</a>
                 </div>
 
 
 
-                <div class="project-box d-flex">
-                    <div id="" class="projectelements">
-                        <div class="img">
-                            <img src="images/ashwadhii.webp" alt="">
-                        </div>
-                        <h4>Ask Anya</h4>
-                    </div>
-                    <a href="https://www.askanya.in/"  target="_blank" class="view-project magnetic">View</a>
-                </div>
+               
 
 
 
@@ -235,7 +237,7 @@
                         <div class="img">
                             <img src="images/get-fit.webp" alt="">
                         </div>
-                        <h4>Dietician Richa</h4>
+                        <h4 class="project-name">Dietician Richa</h4>
                     </div>
                     <a href="https://dieticianricha.com/get-fit/" target="_blank" class="view-project magnetic">View</a>
                 </div>
@@ -260,7 +262,7 @@
 
             <div class="container">
                 <div class="row edu-row ">
-                    <div class="col-md-6 education">
+                    <div class="col-md-5 education">
                         <h2 class="underline">Education </h2>
                         <div class="edu">
                             <h3>Rajendra Mane College of Engineering & Technology</h3>
@@ -280,15 +282,19 @@
                     <div class="col-md-1">
 
                     </div>
-                    <div class="col-md-4 experience">
+                    <div class="col-md-6 experience">
                         <h2 class="underline">Experience</h2>
                         <div class="exp">
                             <h3>Digichefs</h3>
                             <h4>Web Developer</h4>
+                             <!-- <p>Developed and maintained high-performance websites for various clients, collaborating closely with designers and project managers to bring design concepts to life. Provided comprehensive training and documentation to enable clients to efficiently manage their online presence. -->
+                            </p>
                         </div>
                         <div class="exp">
                             <h3>Digichefs</h3>
                             <h4>Web Developer Intern</h4>
+                            <!-- <p>Assisted in designing and developing responsive websites and web applications. Implemented front-end functionality using HTML, CSS, and JavaScript to enhance user experience. Provided prompt technical support to clients and end-users, addressing inquiries and resolving issues effectively.</p> -->
+            
                         </div>
                         <div class="exp">
                             <h3>Digichefs</h3>

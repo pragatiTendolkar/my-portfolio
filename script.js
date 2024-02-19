@@ -29,6 +29,7 @@ document.querySelectorAll(".projectelements").forEach(function (elem) {
           ease: Power3,
           duration: 0.5,
       });
+     
   });
 
 
@@ -42,8 +43,14 @@ document.querySelectorAll(".projectelements").forEach(function (elem) {
           top: diff,
           left: dets.clientX,
           rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
-      });     
+      });  
+      
+   
+     
   });
+
+
+
 });
 
 
@@ -209,140 +216,140 @@ gsap.to(".line-2", {
 
 
 
-
 function initPhysicsSimulation() {
        
-  var Engine = Matter.Engine,
-          Render = Matter.Render,
-          Events = Matter.Events,
-          MouseConstraint = Matter.MouseConstraint,
-          Mouse = Matter.Mouse,
-          World = Matter.World,
-          Bodies = Matter.Bodies;
+    var Engine = Matter.Engine,
+            Render = Matter.Render,
+            Events = Matter.Events,
+            MouseConstraint = Matter.MouseConstraint,
+            Mouse = Matter.Mouse,
+            World = Matter.World,
+            Bodies = Matter.Bodies;
+    
+        var engine = Engine.create(),
+            world = engine.world;
+    
+            var width1 = 900;
+        var render = Render.create({
+            element: document.getElementById('matter-container'),
+            engine: engine,
+            options: {
+                width: 1200,
+                height: 400,
+                pixelRatio: 2,
+                background: '#080808',
+                wireframes: false,
+            }
+        });
+    
+       var ground = Bodies.rectangle(
+      (900 / 2) + 160, 300 + 180, 1200, 160, {
+          isStatic: true,
+          chamfer: { radius: 10 },
+          render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+      }
+  );
   
-      var engine = Engine.create(),
-          world = engine.world;
+  var wallLeft = Bodies.rectangle(-80, 300 / 2, 160, 300, {
+      isStatic: true,
+      chamfer: { radius: 10 },
+      render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+  });
   
-          var width1 = 900;
-      var render = Render.create({
-          element: document.getElementById('matter-container'),
-          engine: engine,
-          options: {
-              width: 1200,
-              height: 400,
-              pixelRatio: 2,
-              background: '#080808',
-              wireframes: false,
-          }
+  var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
+      isStatic: true,
+      chamfer: { radius: 10 },
+      render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+  });
+  
+        var roof = Bodies.rectangle(
+            (900 / 2) + 160, -80, 900 + 320, 160, { isStatic: true, render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' } });
+    
+        var radius = 20;
+    
+        var html = Bodies.rectangle(400, 150, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/html.png', xScale:1, yScale: 1 } }
+        });
+    
+        var css = Bodies.rectangle(590, 170, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/css.png', xScale: 0.9, yScale: 0.9 } }
+        });
+    
+    
+    
+        var js   = Bodies.rectangle(700,100, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/JS.png', xScale: 0.9, yScale: 0.9 } }
+        });
+    
+        var react = Bodies.rectangle(470, 90, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/react.png', xScale: 0.9, yScale: 0.9} }
+        });
+    
+        var tail = Bodies.rectangle(630, 10, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/tailwind.png', xScale: 0.9, yScale: 0.9 } }
+        });
+    
+        
+        var boot = Bodies.rectangle(500, 90, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/boot.png', xScale: 0.9, yScale: 0.9 } }
+        });
+    
+        var creative = Bodies.rectangle(580, 90, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/creative.png', xScale: 0.9, yScale: 0.9} }
+        });
+    
+        var wordpress = Bodies.rectangle(770, 90, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.8, yScale: 0.8 } }
+        });
+    
+        var shopify = Bodies.rectangle(490, 0, 175, 45,{
+            chamfer: { radius: radius },
+            render: { sprite: { texture: 'skills/shopify.png', xScale: 0.9, yScale: 0.8 } }
+        });
+  
+        var photoshop = Bodies.rectangle(490, 0, 175, 45,{
+          chamfer: { radius: radius },
+          render: { sprite: { texture: 'skills/photoshop.webp', xScale: 0.9, yScale: 0.8 } }
       });
-  
-     var ground = Bodies.rectangle(
-    (900 / 2) + 160, 300 + 180, 1200, 160, {
-        isStatic: true,
-        chamfer: { radius: 10 },
-        render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+    
+        World.add(engine.world, [ground, wallLeft, wallRight, roof, html, css,js,react,tail,boot, creative,wordpress,shopify, photoshop]);
+    
+        var mouse = Mouse.create(render.canvas),
+            mouseConstraint = MouseConstraint.create(engine, {
+                mouse: mouse,
+                constraint: {
+                    stiffness: 0.2,
+                    render: {
+                        visible: false
+                    }
+                }
+            });
+    
+        World.add(world, mouseConstraint);
+    
+        render.mouse = mouse;
+    
+        mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+        mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+    
+        let click = false;
+    
+        document.addEventListener('mousedown', () => click = true);
+        document.addEventListener('mousemove', () => click = false);
+        document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
+    
+        Engine.run(engine);
+        Render.run(render);
     }
-);
-
-var wallLeft = Bodies.rectangle(-80, 300 / 2, 160, 300, {
-    isStatic: true,
-    chamfer: { radius: 10 },
-    render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
-});
-
-var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
-    isStatic: true,
-    chamfer: { radius: 10 },
-    render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
-});
-
-      var roof = Bodies.rectangle(
-          (900 / 2) + 160, -80, 900 + 320, 160, { isStatic: true, render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' } });
-  
-      var radius = 20;
-  
-      var html = Bodies.rectangle(400, 150, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/html.png', xScale:1, yScale: 1 } }
-      });
-  
-      var css = Bodies.rectangle(590, 170, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/css.png', xScale: 0.9, yScale: 0.9 } }
-      });
-  
-  
-  
-      var js   = Bodies.rectangle(700,100, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/JS.png', xScale: 0.9, yScale: 0.9 } }
-      });
-  
-      var react = Bodies.rectangle(470, 90, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/react.png', xScale: 0.9, yScale: 0.9} }
-      });
-  
-      var tail = Bodies.rectangle(630, 10, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/tailwind.png', xScale: 0.9, yScale: 0.9 } }
-      });
-  
-      
-      var boot = Bodies.rectangle(500, 90, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/boot.png', xScale: 0.9, yScale: 0.9 } }
-      });
-  
-      var creative = Bodies.rectangle(580, 90, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/creative.png', xScale: 0.9, yScale: 0.9} }
-      });
-  
-      var wordpress = Bodies.rectangle(770, 90, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.8, yScale: 0.8 } }
-      });
-  
-      var shopify = Bodies.rectangle(490, 0, 135, 35,{
-          chamfer: { radius: radius },
-          render: { sprite: { texture: 'skills/shopify.png', xScale: 0.9, yScale: 0.8 } }
-      });
-
-      var photoshop = Bodies.rectangle(490, 0, 135, 35,{
-        chamfer: { radius: radius },
-        render: { sprite: { texture: 'skills/photoshop.webp', xScale: 0.9, yScale: 0.8 } }
-    });
-  
-      World.add(engine.world, [ground, wallLeft, wallRight, roof, html, css,js,react,tail,boot, creative,wordpress,shopify, photoshop]);
-  
-      var mouse = Mouse.create(render.canvas),
-          mouseConstraint = MouseConstraint.create(engine, {
-              mouse: mouse,
-              constraint: {
-                  stiffness: 0.2,
-                  render: {
-                      visible: false
-                  }
-              }
-          });
-  
-      World.add(world, mouseConstraint);
-  
-      render.mouse = mouse;
-  
-      mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
-      mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
-  
-      let click = false;
-  
-      document.addEventListener('mousedown', () => click = true);
-      document.addEventListener('mousemove', () => click = false);
-      document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
-  
-      Engine.run(engine);
-      Render.run(render);
-  }
+    
   
 
 
