@@ -223,6 +223,7 @@ function initPhysicsSimulation() {
       var engine = Engine.create(),
           world = engine.world;
   
+          var width1 = 900;
       var render = Render.create({
           element: document.getElementById('matter-container'),
           engine: engine,
@@ -260,55 +261,55 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
   
       var radius = 20;
   
-      var html = Bodies.rectangle(400, 150, 175, 45,{
+      var html = Bodies.rectangle(400, 150, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/html.png', xScale:1, yScale: 1 } }
       });
   
-      var css = Bodies.rectangle(590, 170, 175, 45,{
+      var css = Bodies.rectangle(590, 170, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/css.png', xScale: 0.9, yScale: 0.9 } }
       });
   
   
   
-      var js   = Bodies.rectangle(700,100, 175, 45,{
+      var js   = Bodies.rectangle(700,100, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/JS.png', xScale: 0.9, yScale: 0.9 } }
       });
   
-      var react = Bodies.rectangle(470, 90, 175, 45,{
+      var react = Bodies.rectangle(470, 90, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/react.png', xScale: 0.9, yScale: 0.9} }
       });
   
-      var tail = Bodies.rectangle(630, 10, 175, 45,{
+      var tail = Bodies.rectangle(630, 10, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/tailwind.png', xScale: 0.9, yScale: 0.9 } }
       });
   
       
-      var boot = Bodies.rectangle(500, 90, 175, 45,{
+      var boot = Bodies.rectangle(500, 90, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/boot.png', xScale: 0.9, yScale: 0.9 } }
       });
   
-      var creative = Bodies.rectangle(580, 90, 175, 45,{
+      var creative = Bodies.rectangle(580, 90, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/creative.png', xScale: 0.9, yScale: 0.9} }
       });
   
-      var wordpress = Bodies.rectangle(770, 90, 175, 45,{
+      var wordpress = Bodies.rectangle(770, 90, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.8, yScale: 0.8 } }
       });
   
-      var shopify = Bodies.rectangle(490, 0, 175, 45,{
+      var shopify = Bodies.rectangle(490, 0, 135, 35,{
           chamfer: { radius: radius },
           render: { sprite: { texture: 'skills/shopify.png', xScale: 0.9, yScale: 0.8 } }
       });
 
-      var photoshop = Bodies.rectangle(490, 0, 175, 45,{
+      var photoshop = Bodies.rectangle(490, 0, 135, 35,{
         chamfer: { radius: radius },
         render: { sprite: { texture: 'skills/photoshop.webp', xScale: 0.9, yScale: 0.8 } }
     });
@@ -342,6 +343,135 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
       Engine.run(engine);
       Render.run(render);
   }
+  
+
+    var MatterEngine = Matter.Engine,
+        MatterRender = Matter.Render,
+        MatterEvents = Matter.Events,
+        MatterMouseConstraint = Matter.MouseConstraint,
+        MatterMouse = Matter.Mouse,
+        MatterWorld = Matter.World,
+        MatterBodies = Matter.Bodies;
+
+    var engine = MatterEngine.create(),
+        world = engine.world;
+
+    var containerWidth = 400;
+    var renderOptions = MatterRender.create({
+        element: document.getElementById('mobile-matter-container'),
+        engine: engine,
+        options: {
+            width: 400,
+            height: 400,
+            pixelRatio: 2,
+            background: '#080808',
+            wireframes: false,
+        }
+    });
+
+    var groundBody = MatterBodies.rectangle(
+        (containerWidth / 2) + 160, 300 + 180, 1200, 160, {
+            isStatic: true,
+            chamfer: { radius: 10 },
+            render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+        }
+    );
+
+    var leftWallBody = MatterBodies.rectangle(-30, 300 / 2, 60, 500, {
+        isStatic: true,
+        chamfer: { radius: 10 },
+        render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+    });
+
+    var rightWallBody = MatterBodies.rectangle(100 + 380, 300 / 2, 160, 1200, {
+        isStatic: true,
+        chamfer: { radius: 10 },
+        render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
+    });
+
+    var roofBody = MatterBodies.rectangle(
+        (containerWidth / 2) + 160, -80, 900 + 320, 160, { isStatic: true, render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' } });
+
+    var radius = 20;
+
+    var htmlBody = MatterBodies.rectangle(0, 300, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/html.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var cssBody = MatterBodies.rectangle(200, 400, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/css.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var jsBody = MatterBodies.rectangle(170, 200, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/JS.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var reactBody = MatterBodies.rectangle(340, 400, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/react.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var tailwindBody = MatterBodies.rectangle(440, 300, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/tailwind.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var bootstrapBody = MatterBodies.rectangle(340, 10, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/boot.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var creativeBody = MatterBodies.rectangle(140, 10, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/creative.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var wordpressBody = MatterBodies.rectangle(40, 250, 135, 39, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var shopifyBody = MatterBodies.rectangle(40, 10, 135, 39, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/shopify.png', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    var photoshopBody = MatterBodies.rectangle(40, 10, 135, 35, {
+        chamfer: { radius: radius },
+        render: { sprite: { texture: 'skills/photoshop.webp', xScale: 0.7, yScale: 0.7 } }
+    });
+
+    MatterWorld.add(engine.world, [groundBody, leftWallBody, rightWallBody, roofBody, htmlBody, cssBody, jsBody, reactBody, tailwindBody, bootstrapBody, creativeBody, wordpressBody, shopifyBody, photoshopBody]);
+    var mouse = MatterMouse.create(renderOptions.canvas),
+        mouseConstraint = MatterMouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: {
+                    visible: false
+                }
+            }
+        });
+
+    MatterWorld.add(world, mouseConstraint);
+
+    renderOptions.mouse = mouse;
+
+    mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+    mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+
+    let click = false;
+
+    document.addEventListener('mousedown', () => click = true);
+    document.addEventListener('mousemove', () => click = false);
+    document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
+
+    MatterEngine.run(engine);
+    MatterRender.run(renderOptions);
+
 
 
 // ScrollTrigger.create({
