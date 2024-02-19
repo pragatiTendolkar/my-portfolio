@@ -933,6 +933,7 @@ html.has-scroll-dragging {
 .contact-heading {
   font-size: 2.5rem;
   text-align: center;
+  width: 70%;
 }
 
 .contact-div {
@@ -971,7 +972,7 @@ html.has-scroll-dragging {
   top: 15px;
   scale: 0.8;
 }
-.about-me-row h4, .projects h2{
+.about-me-row h4, .projects h2, .underline, .edu-row h2{
   font-size: 30px;
 }
 .projects h2 {
@@ -987,8 +988,23 @@ font-size: 20px;
   font-size: 16px;
 
 }
+
+.edu-row h3 {
+  font-size: 1.1rem;
+}
+.edu-row h4 {
+  font-size: 0.9rem;
+  color: #b2b2b2;
+}
 .mobile-matter-container{
   scale: 0.9;
 }
+div#matter-container {
+  display: none !important;
+}
+
+
+
+
 
 }

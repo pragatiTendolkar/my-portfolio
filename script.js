@@ -345,6 +345,10 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
   }
   
 
+
+
+//   mobile view skill section
+
     var MatterEngine = Matter.Engine,
         MatterRender = Matter.Render,
         MatterEvents = Matter.Events,
@@ -361,10 +365,10 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
         element: document.getElementById('mobile-matter-container'),
         engine: engine,
         options: {
-            width: 300,
+            width: 360,
             height: 400,
             pixelRatio: 2,
-            background: '#080808',
+            background: '#171717',
             wireframes: false,
         }
     });
@@ -383,7 +387,7 @@ var wallRight = Bodies.rectangle(900 + 380, 300 / 2, 160, 1200, {
         render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
     });
 
-    var rightWallBody = MatterBodies.rectangle(100 + 380, 300 / 2, 160, 1200, {
+    var rightWallBody = MatterBodies.rectangle(100 + 380, 300 / 2, 240, 1200, {
         isStatic: true,
         chamfer: { radius: 10 },
         render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
