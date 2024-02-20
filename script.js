@@ -515,23 +515,24 @@ gsap.to("#matter-container", {
 });
 
 gsap.to("#mobile-matter-container", {
-    opacity: 0, // Start with opacity 0
+    opacity: 0, 
   duration: 1, 
     scrollTrigger: {
       trigger: "#mobile-matter-container",
       scroller: "#main",
-      start: "-200%",
-      end: "+=50%",
+      start: "-290%",
+      end: "+10%",
+      markers:true,
      
-    
+      duration: 1, 
     },
-    opacity: 1, // Start with opacity 0
+    
   
     onComplete: function () {
   
       initmobilePhysicsSimulation(); // Call your physics simulation initialization here
   },
-    
+  opacity: 1,
   });
   
 
