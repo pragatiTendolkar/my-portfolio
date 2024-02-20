@@ -511,7 +511,6 @@ gsap.to("#matter-container", {
 
     initPhysicsSimulation(); // Call your physics simulation initialization here
 },
-  
 });
 
 gsap.to("#mobile-matter-container", {
@@ -522,8 +521,6 @@ gsap.to("#mobile-matter-container", {
       scroller: "#main",
       start: "-290%",
       end: "+10%",
-      markers:true,
-     
       duration: 1, 
     },
     
