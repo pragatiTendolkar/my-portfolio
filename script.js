@@ -250,7 +250,7 @@ function initPhysicsSimulation() {
       }
   );
   
-  var wallLeft = Bodies.rectangle(-80, 300 / 2, 160, 300, {
+  var wallLeft = Bodies.rectangle(-80, 300 / 2, 160, 630, {
       isStatic: true,
       chamfer: { radius: 10 },
       render: { fillStyle: '#333', lineWidth: 0, strokeStyle: '#555' }
@@ -269,7 +269,7 @@ function initPhysicsSimulation() {
     
         var html = Bodies.rectangle(400, 150, 175, 45,{
             chamfer: { radius: radius },
-            render: { sprite: { texture: 'skills/html.png', xScale:1, yScale: 1 } }
+            render: { sprite: { texture: 'skills/html.png', xScale: 0.9, yScale: 0.9 } }
         });
     
         var css = Bodies.rectangle(590, 170, 175, 45,{
@@ -307,7 +307,7 @@ function initPhysicsSimulation() {
     
         var wordpress = Bodies.rectangle(770, 90, 175, 45,{
             chamfer: { radius: radius },
-            render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.8, yScale: 0.8 } }
+            render: { sprite: { texture: 'skills/wordpress.png', xScale: 0.9, yScale: 0.9 } }
         });
     
         var shopify = Bodies.rectangle(490, 0, 175, 45,{
@@ -353,7 +353,7 @@ function initPhysicsSimulation() {
   
 
 
-
+    function initmobilePhysicsSimulation(){
 //   mobile view skill section
 
     var MatterEngine = Matter.Engine,
@@ -484,7 +484,7 @@ function initPhysicsSimulation() {
     MatterRender.run(renderOptions);
 
 
-
+    }
 // ScrollTrigger.create({
 //     trigger: "#matter-container",
 //     start: " 100%",
@@ -514,6 +514,26 @@ gsap.to("#matter-container", {
   
 });
 
+gsap.to("#mobile-matter-container", {
+    opacity: 0, // Start with opacity 0
+  duration: 1, 
+    scrollTrigger: {
+      trigger: "#mobile-matter-container",
+      scroller: "#main",
+      start: "-200%",
+      end: "+=50%",
+      markers:true,
+    
+    },
+    opacity: 1, // Start with opacity 0
+  
+    onComplete: function () {
+  
+      initmobilePhysicsSimulation(); // Call your physics simulation initialization here
+  },
+    
+  });
+  
 
 
 gsap.from(".contact-div", {

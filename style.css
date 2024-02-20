@@ -40,7 +40,7 @@ body {
 
 #matter-container {
   width: 1350px;
-  height: 600px;
+  height: 500px;
   border-radius: 150px;
   margin: auto;
   position: relative;
@@ -134,7 +134,7 @@ li {
 .ham-main {
   background-color: #fff;
   width: 35%;
-  height: 110vh;
+  height: 101vh;
   position: absolute;
   right: 0;
   top: -10px;
@@ -187,7 +187,9 @@ li {
   transition: 0.7s rotate;
 
 }
-
+#mobile-matter-container{
+  height: 400px;
+}
 .line2 {
   width: 100%;
   transition: 0.7s width;
@@ -574,22 +576,34 @@ html.has-scroll-dragging * {
 .exp {
   border-bottom: 1px solid #959595;
   padding: 30px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 80px 0;
+
 }
 
 
 .edu-row h3 {
-  font-size: 1.4rem;
+  font-size: 1rem;
+  width: 100%;
 }
 
 .edu-row h4 {
-  font-size: 1.1rem;
-  color: #b2b2b2;
+  font-size: 1.5rem;
+  color: #ffffff;
+  width: 70%;
 }
+.exp h5, .edu h5 {
+  font-size: 1rem;
+  width: 30%;
+  text-align: end;
+}
+
 
 .edu-row h2,
 .skills-head {
   font-size: 50px;
-  margin: 60px 0;
+  margin: 90px 0;
   padding: 0;
 
 }
@@ -834,9 +848,9 @@ html.has-scroll-dragging {
     display: none !important;
   }
 
-  .mobile-matter-container{
+  #mobile-matter-container {
     display: block;
-  }
+}
   .heading .my-text .char {
     font-size: 4.5rem;
   }
@@ -940,7 +954,10 @@ html.has-scroll-dragging {
   width: 85%;
 
 }
-
+.edu, .exp {
+ 
+  margin:  0;
+}
 
 .contact-heading {
   font-size: 2.5rem;
@@ -1003,11 +1020,13 @@ font-size: 20px;
 }
 
 .edu-row h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  
 }
 .edu-row h4 {
-  font-size: 0.9rem;
-  color: #b2b2b2;
+  font-size: 1.3rem;
+  width: 100%;
+  
 }
 .mobile-matter-container{
   scale: 0.9;
@@ -1016,8 +1035,32 @@ div#matter-container {
   display: none !important;
 }
 
+.edu-row h2, .skills-head {
+
+  margin: 90px 0 0 0;
+
+}
+
+.exp h5, .edu h5 {
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: start;
+
+}
+#mobile-matter-container:before {
+  content: "";
+  background: #00ffff00;
+  width: 100vw;
+  height: 400px;
+  display: block;
+  position: absolute;
+}
 
 
-
-
+.loader {
+  width: 100vw;
+  height: 110vh;
+  top: -100px;
+  border-radius: 0 !important;
+}
 }
