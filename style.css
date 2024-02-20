@@ -67,7 +67,7 @@ body {
 }
 
 .loaded .loader{
-  top:-100%;
+  top:-400%;
   border-radius: 0 0 50% 50%;
 }
 .logo{
@@ -1061,5 +1061,8 @@ div#matter-container {
   width: 100vw;
   height: 110vh;
   border-radius: 0 !important;
+}
+.education .underline {
+  margin-bottom: 24px;
 }
 }
