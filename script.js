@@ -522,7 +522,7 @@ gsap.to("#mobile-matter-container", {
       scroller: "#main",
       start: "-200%",
       end: "+=50%",
-      markers:true,
+     
     
     },
     opacity: 1, // Start with opacity 0
