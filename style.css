@@ -57,7 +57,7 @@ body {
   align-items: center;
   background-color: #ffffff;
   z-index: 11111111111111;
-  top: 0;
+  top: -100px;
   transition: 2s top;
 
 }
@@ -137,7 +137,7 @@ li {
   height: 101vh;
   position: absolute;
   right: 0;
-  top: -10px;
+  top: -100px;
   z-index: 111111;
   padding: 30px;
   display: flex;
