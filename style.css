@@ -58,7 +58,7 @@ body {
   background-color: #ffffff;
   z-index: 11111111111111;
   top: 0;
-  transition: 4s top;
+  transition: 3s top;
 
 }
 .loader-item{
@@ -137,7 +137,7 @@ li {
   height: 101vh;
   position: absolute;
   right: 0;
-  top: -100px;
+  top: 0;
   z-index: 111111;
   padding: 30px;
   display: flex;
@@ -1065,4 +1065,6 @@ div#matter-container {
 .education .underline {
   margin-bottom: 24px;
 }
+
+
 }
