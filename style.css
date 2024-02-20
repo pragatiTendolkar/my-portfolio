@@ -229,7 +229,7 @@ li {
 
 #page1 {
 
-  margin-top: -260px;
+  margin-top: -100px;
 
 }
 
@@ -848,6 +848,11 @@ html.has-scroll-dragging {
     display: none !important;
   }
 
+  #page1 {
+
+    margin-top: -260px;
+  
+  }
   #mobile-matter-container {
     display: block;
 }
