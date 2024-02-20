@@ -51,14 +51,14 @@ body {
 .loader{
   width: 100vw;
   height: 110vh;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
   z-index: 11111111111111;
-  top: -100px;
-  transition: 2s top;
+  top: 0;
+  transition: 4s top;
 
 }
 .loader-item{
@@ -1060,7 +1060,6 @@ div#matter-container {
 .loader {
   width: 100vw;
   height: 110vh;
-  top: -100px;
   border-radius: 0 !important;
 }
 }
